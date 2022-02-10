@@ -1,0 +1,55 @@
+[{
+    "id":"0",
+    "name": "OK Kanmanni",
+    "rating": "5",
+    "poster": "https://i.scdn.co/image/ab67616d0000b2732318539f1b037d942fafa581",
+    "trailer": "https://www.youtube.com/embed/1sVr-uWZPjE",
+    "summary": "Two youngsters Adi and Tara are attracted to each other when they meet at a wedding. Since they do not believe in marriage, they decide to live together. What follows forms the crux of the story."
+},
+{
+    "id":"1",
+    "name": "Vikram Vedha",
+    "rating": "5",
+    "poster": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT27-2Cx2HY-7sneYNNzWf9ej3wL3Q2zWmpiLcu9bXd2A4djqZB",
+    "trailer": "https://www.youtube.com/embed/1sVr-uWZPjE",
+    "summary": "Vikram, a pragmatic policeman, and his partner Simon are on the hunt to capture Vedha. When Vedha voluntarily surrenders, he offers to tell Vikram a story, throwing Vikram's life into disarray."
+},
+{
+    "id":"2",
+    "name": "Jai Bhim",
+    "rating": "5",
+    "poster": "https://thelogicalindian.com/h-upload/2021/11/21/207096-jai-bhim-controversy-website.jpg",
+    "trailer": "https://www.youtube.com/embed/nnXpbTFrqXA",
+    "summary": "A brave activist-lawyer fights for justice when a poor tribal man, who gets falsely accused of robbery, goes missing from the police custody."
+}, {
+    "id":"3",
+    "name": "Karnan",
+    "rating": "3.5",
+    "poster": "https://images.cinemaexpress.com/uploads/user/imagelibrary/2020/7/28/original/karnan.jpg",
+    "trailer": "https://www.youtube.com/embed/pgfUzQ8nzBY",
+    "summary": "A small village in Tamil Nadu is inhabited by people belonging to a lower caste. Karnan, a young man, is revolted by the inhuman treatment given to his villagers and fights for their rights."
+}, {
+    "id":"4",
+    "name": "Thupakki",
+    "rating": "4.5",
+    "poster": "https://flxt.tmsimg.com/assets/p9561344_p_v10_ab.jpg",
+    "trailer": "https://www.youtube.com/embed/s0O44Sn1hD4&t=5s",
+    "summary": "In a bomb blast, an army officer apprehends a sleeper agent who confesses that more bomb attacks are planned around the city; the officer impedes the subsequent blasts and devices a plan to capture the mastermind behind these attacks."
+},
+{
+    "id":"5",
+    "name": "Aruvi",
+    "rating": "4.5",
+    "poster": "https://m.media-amazon.com/images/M/MV5BZDM5N2FlNTctNTY3MS00OWNjLWFmOTAtYjJkMjU5NWIyNDVmXkEyXkFqcGdeQXVyMTA3MzQ4MTc0._V1_.jpg",
+    "trailer": "https://www.youtube.com/embed/jgYYxs_d_bo",
+    "summary": "Aruvi, a middle-class girl, is thrown out of her house after her family accuses her of having brought shame on them. Later, as she tries to survive on her own, she must overcome several challenges."
+},
+{
+    "id":"6",
+    "name": "Kaithi",
+    "rating": "4",
+    "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFoCbxJG_W4VkmuYr1PMyhwy4R8vSuq5nf6lDhOJCAv6xr77qM",
+    "trailer": "https://www.youtube.com/embed/g79CvhHaj5I",
+    "summary": "Dilli, an ex-convict, endeavours to meet his daughter for the first time after leaving prison. However, his attempts are interrupted due to a drug raid planned by Inspector Bejoy."
+}
+]

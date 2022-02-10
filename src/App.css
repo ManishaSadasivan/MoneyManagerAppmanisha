@@ -6,6 +6,13 @@
   height: 40vmin;
   pointer-events: none;
 }
+.MovieList{
+  display:flex;
+  padding:5px;
+  justify-content:space-around;
+flex-wrap: wrap;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
