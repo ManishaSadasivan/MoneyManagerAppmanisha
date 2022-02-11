@@ -10,8 +10,9 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
 import EditMovie from'./EditMovie';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import {
   Switch,
@@ -40,13 +41,23 @@ function App() {
   .then((data)=>data.json()
   .then((response)=>setMovielist(response)))
  }
+
+ const themectx = createTheme({
+   pallete:{
+    mode:"dark"
+   },
+   
+});
 useEffect(getMovies,[])
- 
+
   return (
     
    
-  
+    <ThemeProvider theme={themectx}>
     <div className="App">
+     
+ 
+
        <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
@@ -80,7 +91,7 @@ useEffect(getMovies,[])
      
     
     </div>
-   
+    </ThemeProvider>
   );
 }
 

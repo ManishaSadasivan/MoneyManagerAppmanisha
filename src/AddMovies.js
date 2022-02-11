@@ -38,7 +38,7 @@ const [summary,setSummary]=useState();
           "Content-Type": "application/json"
         },
 
-       }).then(()=>history.push("/Movies"))
+       }).then(()=>history.push("/Movies"));
         // setMovielist([...movielist,newMovie])
      
         // console.log(newMovie);

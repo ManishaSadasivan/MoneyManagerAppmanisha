@@ -8,14 +8,16 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import EditIcon from '@material-ui/icons/Edit';
-import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 import { useHistory  } from "react-router-dom";
-import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
-import ThumbDownIcon from '@material-ui/icons/ThumbDown';
+import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
+import ThumbDownIcon from '@mui/icons-material/ThumbDown';
 import Checkbox from '@mui/material/Checkbox';
 import InfoIcon from '@mui/icons-material/Info';
-
+import ToggleOffIcon from '@mui/icons-material/ToggleOff';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 export default function Movies({movielist,setMovielist}) {
  
  
@@ -62,25 +64,26 @@ export default function Movies({movielist,setMovielist}) {
           <Typography gutterBottom variant="h5" component="h2">
             <div className="movieSpecs">
               <h4> {name}</h4>
+              <Button size="large" color="primary" onClick={()=>{settoggle(!toggle)}}>
+              {toggle? <ExpandLessIcon></ExpandLessIcon>:<ExpandMoreIcon></ExpandMoreIcon>}
+        </Button>
               <Button size="large" color="primary" onClick={()=>history.push("/MovieDetails/"+id)}>
-              ⓘ
+              <InfoIcon fontSize="small" ></InfoIcon>
         </Button>
               <h6 style={{color:rating<4?"red":"green"}}>⭐{rating}</h6>
-              <Button size="large" color="primary" onClick={()=>{settoggle(!toggle)}}>
-              ^
-        </Button>
+           
             </div>
          
            
           </Typography>
          
-      
+    
           {toggle ?<Typography variant="body2" color="textSecondary" component="p" >
             
             {summary}
            
            </Typography> :" "}
-           <InfoIcon fontSize="small" ></InfoIcon>
+          
         </CardContent>
       </CardActionArea>
       <CardActions>
