@@ -1,97 +1,89 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import Movies from './Movies';
-import AddMovies from './AddMovies';
-import Home from './Home';
-import MovieDetails from './MovieDetails';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
+import AppBar from '@mui/material/AppBar';
+
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import EditMovie from'./EditMovie';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import AddExpenses from './AddExpenses';
+import OfficeExpense from'./OfficeExpense';
+import Home from './Home';
+
 
 import {
   Switch,
   Route,
   Link
 } from "react-router-dom";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-}));
+import Expenses from './Expenses';
 
 
 function App() {
-  const classes = useStyles();
- const [movielist,setMovielist]=useState([]);
- function getMovies(){
-  fetch("https://61f66c842e1d7e0017fd6d9f.mockapi.io/movielist",{method: "GET"})
-  .then((data)=>data.json()
-  .then((response)=>setMovielist(response)))
- }
+ 
+ const [expenselist,setexpenselist]=useState([]);
+ function getexpenselist(){
+  fetch("https://62482cce4bd12c92f40843fc.mockapi.io/expenselist").then((data)=>data.json()).then((data)=>setexpenselist(data))
+}useEffect(getexpenselist,[])
 
- const themectx = createTheme({
-   pallete:{
-    mode:"dark"
-   },
-   
-});
-useEffect(getMovies,[])
-
+const [financialexpense,setfinancialexpense]=useState([]);
+function getfinancialexpense(){
+ fetch("https://62491d8e20197bb4626f6f2a.mockapi.io/officeexpense").then((data)=>data.json()).then((data)=>setfinancialexpense(data))
+}useEffect(getfinancialexpense,[])
   return (
     
    
-    <ThemeProvider theme={themectx}>
     <div className="App">
      
  
 
-       <div className={classes.root}>
-      <AppBar position="static">
+     <AppBar position="static">
         <Toolbar>
-      
-          <Link to="Movies"><Button>Movies</Button></Link>
-          <Link to="AddMovies"><Button > AddMovies</Button></Link>
+          <IconButton
+            size="large"
+            edge="start"
+            color="primary"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
          
-       
+            <MenuIcon />
+          </IconButton>
+          <Link to="/"><Button class="btn btn-light"> Money Manager</Button></Link>
+         
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Link to="Expense"><Button class="btn btn-dark" >Personal Expenses- Dashboard</Button></Link>
+          </Typography>
+          <Link to="AddExpense" class="btn btn-dark">  <Button color="inherit">Add Personal /Office  Expenses</Button></Link>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Link to="FinancialExpense" class="btn btn-dark"><Button color="inherit">Office Expense-Dashboard</Button></Link>
+          </Typography>
+  
         </Toolbar>
       </AppBar>
-    </div>
-     
-      
+    
+  
+        
       <Switch>
         <Route exact path="/">
         <Home/>
         </Route>
-        <Route path="/Movies">
-          <Movies movielist={movielist} setMovielist={setMovielist} />
-        </Route>
-        <Route path="/AddMovies">
-<AddMovies movielist={movielist} setMovielist={setMovielist}/>
-        </Route>
-        <Route path="/EditMovie/:id">
-<EditMovie movielist={movielist} setMovielist={setMovielist}/>
-        </Route>
-        <Route path="/MovieDetails/:id">
-<MovieDetails movielist={movielist} setMovielist={setMovielist}/>
-        </Route>
+    <Route path="/AddExpense">
+      <AddExpenses/>
+    </Route>
+    <Route path="/Expense">
+      <Expenses expenselist={expenselist} setexpenselist={setexpenselist}/>
+    </Route>
+    <Route path="/FinancialExpense">
+    <OfficeExpense financialexpense={financialexpense} setfinancialexpense={setfinancialexpense}/>
+    </Route>
+  
       </Switch>
-     
+    
     
     </div>
-    </ThemeProvider>
+   
   );
 }
 

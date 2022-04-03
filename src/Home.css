@@ -1,3 +1,9 @@
 .header{
     align-items:center;  
   }
+ #tablerow{
+   width:80%;
+   margin:auto;
+   padding: 10px;
+ }
+ 
